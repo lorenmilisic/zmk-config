@@ -10,4 +10,4 @@ set_property(GLOBAL APPEND PROPERTY extra_post_build_commands
 target_sources_ifdef(CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM app PRIVATE custom_status_screen.c)
 target_sources_ifdef(CONFIG_ZMK_DISPLAY app PRIVATE custom_battery_status.c)
 target_sources_ifdef(CONFIG_ZMK_DISPLAY app PRIVATE custom_charge_status.c)
-target_include_directories(app PRIVATE include)
+target_include_directories(app PRIVATE include) 
