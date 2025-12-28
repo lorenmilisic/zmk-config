@@ -8,7 +8,6 @@ jobs:
     container:
       image: zmkfirmware/zmk-build-arm:stable
 
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +37,7 @@ jobs:
       # ---------- LEFT HALF ----------
       - name: Build Amalgamate Left
         run: |
-          west build -s zmk/app -b nice_nano_v2 \
+          west build -s zmk/app -b nice_nano \
             -- -DSHIELD=amalgamate_left \
                -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
@@ -54,7 +53,7 @@ jobs:
       # ---------- RIGHT HALF ----------
       - name: Build Amalgamate Right
         run: |
-          west build --pristine -s zmk/app -b nice_nano_v2 \
+          west build --pristine -s zmk/app -b nice_nano \
             -- -DSHIELD=amalgamate_right \
                -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
