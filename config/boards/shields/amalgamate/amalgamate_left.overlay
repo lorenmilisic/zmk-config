@@ -32,9 +32,6 @@
 
 };
 
-&left_encoder {
-	status = "okay";
-};
 
 /* 
 &bt_unpair_combo {
