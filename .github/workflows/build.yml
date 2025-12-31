@@ -65,3 +65,19 @@ jobs:
         with:
           name: amalgamate_right
           path: amalgamate_right.uf2
+
+      # ---------- SETTINGS RESET ----------
+      - name: Build Settings Reset
+        run: |
+          west build --pristine -s zmk/app -b nice_nano \
+            -- -DSHIELD=settings_reset \
+               -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+
+      - name: Rename Settings Reset UF2
+        run: cp build/zephyr/zmk.uf2 settings_reset.uf2
+
+      - name: Upload Settings Reset Firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: settings_reset
+          path: settings_reset.uf2
